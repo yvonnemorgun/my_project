@@ -7,47 +7,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
-    <title>당신의 향은 무엇일까요? </title>
+    <title>당신의 향은 무엇일까요?</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-        div.background {
+        .background {
             position: relative;
             width: 100%;
-            height: 700px;
-            background-size: cover;
-            background: radial-gradient(#fae8e6, #FFC0CB, #E6749D);
+            height: 500px;
+            background: radial-gradient(#f5ba9e, #FFC0CB, #E6749D);
             text-align: center;
         }
 
         .wrap {
             width: 100%;
-            height: 700px;
+            height: 500px;
             margin: 10px auto;
         }
 
         .headline {
-            margin: auto;
-            padding: 70px;
+            padding: 40px 10px;
             text-align: center;
             font-family: 'Noto Serif KR', serif;
-            font-weight: 700;
             font-size: x-large;
+            font-weight: bold;
         }
 
         .story {
-            margin: auto;
-            padding: 40px;
             text-align: center;
             font-family: 'Noto Serif KR', serif;
         }
@@ -60,10 +53,24 @@
             font-size: 12px;
             text-align: center;
         }
+
+        .question {
+            padding: 40px 10px;
+            text-align: center;
+            font-family: 'Noto Serif KR', serif;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        .answer {
+            text-align: center;
+            font-family: 'Noto Serif KR', serif;
+
+        }
     </style>
     <script>
         let page = 1;
-        let max_page = 3
+        let max_page = 5
         let answer_idxs = [];
 
         function getQuestion() {
@@ -83,7 +90,7 @@
                 url: `/question?page=${page}`,
                 data: {},
                 success: function (response) {
-                    $("#question").html(response['question']['text'] + '<button type="button" class="btn btn-light btn-circle btn-xl" onclick="getQuestion()"> 다음 문제 </button>');
+                    $("#question").html(response['question']['text'] + '<button type="button" class="btn btn-light btn-circle btn-xl" onclick="getQuestion()">다음 문제</button>');
                     let answers = response['answers'];
                     for (let i = 0; i < answers.length; i++) {
                         makeAnswer(answers[i]['text'], answers[i]['answer_idx']);
@@ -91,6 +98,7 @@
                     $("#question").show();
                     $("#answers").show();
                     $("#story").hide();
+                    $("#headline").hide();
                     page++;
                 }
             })
@@ -105,6 +113,7 @@
                     $("#question").html(response['question']['text']);
                     $("#answers").hide();
                     $("#story").hide();
+                    $("#headline").hide();
                     page++;
                 }
             })
@@ -126,32 +135,33 @@
     </script>
 
 </head>
-<div>
-    <div class="wrap">
-        <div class="background">
-            <div class="headline" >
-                <p>당신이 정말 좋아하는 향은 무엇일까요? </p>
-            </div>
-            <div class="story" id="story">
-                <p>당신이 정말 좋아하는 향은 무엇일까요? </p>
-                <p>눈을 떠보니 꿈속입니다.<br>
-                    저쪽에 촛불이 보이네요.<br>
-                    눈을 비비며 촛불에 가보니 편가 적혀있습니다.</p>
-
-                <p>“ 당신의 향을 찾지 못면 꿈에서 깨어나지 못합니다"</p>
-
-                <p>당신은 이제 모든질문을 마쳐야만 꿈에서 깨어날 수 있습니다.</p>
-
-                <p>질문을 마치고 꿈에서 깨면<br>
-                    나를 드러내는 향이 무엇인지 알 수 있을거예요.
-            </div>
-            <button type="button" class="btn btn-light btn-circle btn-xl" onclick="getQuestion()"> START</button>
-       </div>
-        <div id="question" style="display: none;">
+<body>
+<div class="wrap">
+    <div class="background">
+        <div class="headline" id="headline">
+            <p>당신이 정말 좋아하는 향은 무엇일까요? </p>
         </div>
-        <div id="answers" style="display: none;">
+        <div class="story" id="story">
+            <p>눈을 떠보니 꿈속입니다.</p>
+            <p> 저쪽에 촛불이 보이네요.<br>
+                눈을 비비며 촛불에 다가가보니 메모가 적혀있습니다.</p>
+
+            <p>“ 당신의 향을 찾지 못하면 꿈에서 깨어나지 못합니다. ”</p>
+
+            <p>당신은 이제 모든 질문을 마쳐야만 꿈에서 깨어날 수 있습니다.<br>
+            </p>
+
+            <p>질문을 마치고 꿈에서 깨면 <br>
+                나를 드러내는 향이 무엇인지 알 수 있을거예요.</p>
+
+            <button type="button" class="btn btn-light btn-circle btn-xl">START</button>
+        </div>
+        <div class="question" id="question" style="display: none;">
+        </div>
+        <div class="answer" id="answers" style="display: none;">
         </div>
     </div>
 </div>
+
 </body>
 </html>
