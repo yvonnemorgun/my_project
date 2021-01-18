@@ -18,17 +18,10 @@ def question():
     answers = list(db.answers.find({'question_idx':int(page)}, {'_id': False}))
     return jsonify({'result': 'success', 'question': question, "answers":answers})
 
-@app.route('/addAnswer')
-def addAnswer():
-    page = request.args.get('page')
-    addAnswer = db.questions.find({'idx': int(page)}, {'_id': False})
+@app.route('/answers' methods=['GET'])
+def answer():
     answers = list(db.answers.find({'desc': int(page)}, {'_id': False}))
     return jsonify({'result': 'success', "answers": answers})
-
-@app.route('/makeAnswer')
-def makeAnswer():
-    page = request.args.get('page')
-
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5001, debug=True)

@@ -133,6 +133,21 @@
             $("#answers").append(htmlTmpl);
         }
 
+        function answers() {
+            $('#question').empty()
+            $('#answers').empty()
+            $.ajax({
+                type: "GET",
+                url: "/answers",
+                data: {},
+                success: function (response) {
+                    let answers = response['answer_idxs']
+                    for (let i = 0; i < answer_idxs.length; i++) {
+                        let answer = answers[i]
+                    }
+                    $('#answers').append(tempHtml)
+                }
+            })
     </script>
 
 </head>
