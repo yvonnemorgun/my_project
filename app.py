@@ -19,7 +19,7 @@ def question():
     return jsonify({'result': 'success', 'question': question, "answers":answers})
 
 @app.route('/answers' methods=['GET'])
-def answer():
+def lastanswers():
     answers = list(db.answers.find({'desc': int(page)}, {'_id': False}))
     return jsonify({'result': 'success', "answers": answers})
 

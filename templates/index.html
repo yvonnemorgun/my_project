@@ -133,7 +133,7 @@
             $("#answers").append(htmlTmpl);
         }
 
-        function answers() {
+        function lastanswers() {
             $('#question').empty()
             $('#answers').empty()
             $.ajax({
@@ -141,11 +141,11 @@
                 url: "/answers",
                 data: {},
                 success: function (response) {
-                    let answers = response['answer_idxs']
+                    let lastanswers = response['answer_idxs']
                     for (let i = 0; i < answer_idxs.length; i++) {
                         let answer = answers[i]
                     }
-                    $('#answers').append(tempHtml)
+                    $('#lastanswers').append(tempHtml)
                 }
             })
     </script>
