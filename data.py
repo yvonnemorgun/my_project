@@ -12,7 +12,7 @@ questions.append({"idx":5, "text":"자, 이제 마지막 여행지 입니다. �
 db.questions.insert_many(list(questions))
 
 answers = []
-answers.append({"question_idx":1, "answer_idx":1, "text":"장미", "desc":"정열적이고 매혹적인 꽃향"})
+answers.append({"question_idx":1, "answer_idx":1, "text":"장미", "desc":"여성스럽고 진한 매혹적인 꽃향"})
 answers.append({"question_idx":1, "answer_idx":2, "text":"자스민", "desc":"은은하면서도 우아한 여성미가 풍부한 향"})
 answers.append({"question_idx":1, "answer_idx":3, "text":"아카시아", "desc":"청순하고 달달한 꽃향"})
 answers.append({"question_idx":1, "answer_idx":4, "text":"라일락", "desc":"청순하고 달달한 꽃향"})

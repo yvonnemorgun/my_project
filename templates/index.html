@@ -132,6 +132,7 @@
                             </label><br/>`;
             $("#answers").append(htmlTmpl);
         }
+
     </script>
 
 </head>
@@ -154,7 +155,7 @@
             <p>질문을 마치고 꿈에서 깨면 <br>
                 나를 드러내는 향이 무엇인지 알 수 있을거예요.</p>
 
-            <button type="button" class="btn btn-light btn-circle btn-xl">START</button>
+            <button type="button" class="btn btn-light btn-circle btn-xl" onclick="getNextQuestion()">START</button>
         </div>
         <div class="question" id="question" style="display: none;">
         </div>
