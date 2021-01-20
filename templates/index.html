@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta property="og:title" content="내 사이트의 제목"/>
+    <meta property="og:description" content="보고 있는 페이지의 내용 요약"/>
+    <meta property="og:image" content="{{ url_for('static', filename='공방전경.jpg') }}"/>
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -90,15 +95,18 @@
                 url: `/question?page=${page}`,
                 data: {},
                 success: function (response) {
-                    $("#question").html(response['question']['text'] + '<button type="button" class="btn btn-light btn-circle btn-xl" onclick="getQuestion()">다음 문제</button>');
+                    $("#question").html(response['question']['text']);
+
                     let answers = response['answers'];
                     for (let i = 0; i < answers.length; i++) {
                         makeAnswer(answers[i]['text'], answers[i]['answer_idx']);
                     }
                     $("#question").show();
                     $("#answers").show();
+                    $("#answers-button").show();
                     $("#story").hide();
                     $("#headline").hide();
+                    /*$("#question").append('');*/
                     page++;
                 }
             })
@@ -106,15 +114,10 @@
 
         function getResult() {
             $.ajax({
-                type: 'GET',
-                url: `/result?answer_idxs=${answer_idxs}`,
-                data: {},
+                type: 'POST',
+                url: `/save`,
+                data: {answer_idxs: answer_idxs},
                 success: function (response) {
-                    $("#question").html(response['question']['text']);
-                    $("#answers").hide();
-                    $("#story").hide();
-                    $("#headline").hide();
-                    page++;
                 }
             })
         }
@@ -133,21 +136,6 @@
             $("#answers").append(htmlTmpl);
         }
 
-        function lastanswers() {
-            $('#question').empty()
-            $('#answers').empty()
-            $.ajax({
-                type: "GET",
-                url: "/answers",
-                data: {},
-                success: function (response) {
-                    let lastanswers = response['answer_idxs']
-                    for (let i = 0; i < answer_idxs.length; i++) {
-                        let answer = answers[i]
-                    }
-                    $('#lastanswers').append(tempHtml)
-                }
-            })
     </script>
 
 </head>
@@ -176,6 +164,10 @@
         </div>
         <div class="answer" id="answers" style="display: none;">
         </div>
+        <button type="button" id="answers-button" class="btn btn-light btn-circle btn-xl" onclick="getQuestion()"
+                style="display: none;">다음 문제
+        </button>
+
     </div>
 </div>
 
