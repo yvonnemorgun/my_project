@@ -118,6 +118,7 @@
                 url: `/save`,
                 data: {answer_idxs: answer_idxs},
                 success: function (response) {
+                    location.href = "/"+response['uuid']
                 }
             })
         }
