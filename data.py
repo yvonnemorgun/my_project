@@ -36,7 +36,7 @@ answers.append({"question_idx":3, "answer_idx":19, "text":"라벤더", "desc":"�
 answers.append({"question_idx":3, "answer_idx":20, "text":"캐모마일", "desc":"은은한 과일향이 따뜻하게 느껴지는 허브향을 좋아하며,"})
 answers.append({"question_idx":3, "answer_idx":21, "text":"유칼립투스", "desc":"가볍고 시원한 바람같은 허브향을 좋아하며,"})
 answers.append({"question_idx":3, "answer_idx":22, "text":"로즈마리", "desc":"신선한 느낌의 묵직한 풀향이 나는 허브향을 좋아하며, "})
-answers.append({"question_idx":3, "answer_idx":23, "text":"민트", "desc":"차가운 느낌의 시원한 풀향을 좋아하며,"})
+answers.append({"question_idx":3, "answer_idx":23, "text":"민트", "desc":"차가운 느낌의 상쾌한 풀향을 좋아하며,"})
 answers.append({"question_idx":3, "answer_idx":24, "text":"이끼식물", "desc":"촉촉한 느낌의 흙향이 풍부한 허브향을 좋아하며,"})
 answers.append({"question_idx":3, "answer_idx":25, "text":"수경식물", "desc":"촉촉한 물향과 풀향이 풍부한 식물향을 좋아하며,"})
 answers.append({"question_idx":3, "answer_idx":27, "text":"허브향을 좋아하지 않습니다.", "desc":"허브향은 좋아하지 않습니다."})
