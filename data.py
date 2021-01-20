@@ -29,7 +29,7 @@ answers.append({"question_idx":2, "answer_idx":13, "text":"복숭아", "desc":"�
 answers.append({"question_idx":2, "answer_idx":14, "text":"체리", "desc":"달큰하고 진항 사랑스러운 과일향을 좋아하며,"})
 answers.append({"question_idx":2, "answer_idx":15, "text":"망고스틴", "desc":"달달하고 은은한 열대과일향을 좋아하며,"})
 answers.append({"question_idx":2, "answer_idx":16, "text":"파인애플", "desc":"새콤달콤하고 풍부한 열대과일향을 좋아하며,"})
-answers.append({"question_idx":2, "answer_idx":17, "text":"무화과", "desc":"무게감이 느껴지는 달큰한 과일햔을 좋아하며,"})
+answers.append({"question_idx":2, "answer_idx":17, "text":"무화과", "desc":"쌉쌀함과 무게감이 느껴지는 달큰한 과일을 좋아하며,"})
 answers.append({"question_idx":2, "answer_idx":18, "text":"과일향을 좋아하지 않습니다.", "desc":"과일향은 좋아하지 않습니다."})
 
 answers.append({"question_idx":3, "answer_idx":19, "text":"라벤더", "desc":"무게감과 따뜻함이 느껴지는 허브향을 좋아하며,"})
@@ -45,7 +45,7 @@ answers.append({"question_idx":4, "answer_idx":28, "text":"소나무", "desc":"�
 answers.append({"question_idx":4, "answer_idx":29, "text":"자작나무", "desc":"깨끗하고 가벼운 느낌의 나무향을 좋아하며,"})
 answers.append({"question_idx":4, "answer_idx":30, "text":"송진(미르)", "desc":"섬세하고 향기로우며 따뜻한 나무 수지 향을 좋아하며,"})
 answers.append({"question_idx":4, "answer_idx":31, "text":"엠버", "desc":"파우더리 하면서 달큰하고 따뜻한 느낌이 풍부한나무향을 좋아하며,"})
-answers.append({"question_idx":4, "answer_idx":32, "text":"가죽", "desc":"단단한 묵직함이 매력젹인 향을 좋아하며, "})
+answers.append({"question_idx":4, "answer_idx":32, "text":"가죽", "desc":"단단한 묵직함이 매력젹인 건조한 향을 좋아하며, "})
 answers.append({"question_idx":4, "answer_idx":33, "text":"머스크", "desc":"아늑하고 포근한 느낌이 드는 파우더리한 향을 좋아하며, "})
 answers.append({"question_idx":4, "answer_idx":34, "text":"샌달우드", "desc":"달큰한 느낌이 여성스러운 나무향을 좋아하며,"})
 answers.append({"question_idx":4, "answer_idx":35, "text":"숲향을 좋아하지 않습니다.", "desc":"숲향은 좋아하지 않습니다."})
